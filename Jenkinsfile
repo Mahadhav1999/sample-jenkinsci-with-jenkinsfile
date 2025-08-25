@@ -5,14 +5,21 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull code from GitHub
-                git branch: 'main', url: 'https://github.com/Mahadhav1999/java-hello-world'
+                git branch: 'main', url: 'https://github.com/Mahadhav1999/java-hello-world.git'
             }
         }
 
-        stage('Build') {
+         stage('Compile') {
             steps {
-                echo 'Building the project...'
-                sh 'echo "Hello Jenkins Build!" > build_output.txt'
+                echo 'compiling the file...'
+                sh javac hello.java > build_output.txt'
+            }
+        }
+
+        stage('Build & Run') {
+            steps {
+                echo 'Building the file with output...'
+                sh java Main > build_output.txt'
             }
         }
 
