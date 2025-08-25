@@ -3,28 +3,28 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
+            step {
                 // Pull code from GitHub
                 git branch: 'main', url: 'https://github.com/Mahadhav1999/java-hello-world.git'
             }
         }
 
          stage('Compile') {
-            steps {
+            step {
                 echo 'compiling the file...'
                 sh javac hello.java
             }
         }
 
         stage('Build & Run') {
-            steps {
+            step {
                 echo 'Building the file with output...'
                 sh java Main
             }
         }
 
         stage('Test') {
-            steps {
+            step {
                 echo 'Running tests...'
                 // Example: Run a dummy test
                 sh 'if grep -q "Hello Jenkins" build_output.txt; then echo "Test Passed"; else exit 1; fi'
@@ -32,7 +32,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
+            step {
                 echo 'Deploying to environment...'
                 // Dummy deploy step
                 sh 'echo "Deployed successfully!"'
