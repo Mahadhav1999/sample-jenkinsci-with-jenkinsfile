@@ -1,5 +1,8 @@
 pipeline {
     agent any   // Run on any available Jenkins agent (or master)
+    triggers {
+        pollSCM('* * * * *') // Run on every minutes 
+    }
 
     stages {
         stage('Checkout') {
