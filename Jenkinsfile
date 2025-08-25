@@ -12,14 +12,14 @@ pipeline {
          stage('Compile') {
             steps {
                 echo 'compiling the file...'
-                sh javac hello.java > build_output.txt'
+                sh javac hello.java
             }
         }
 
         stage('Build & Run') {
             steps {
                 echo 'Building the file with output...'
-                sh java Main > build_output.txt'
+                sh java Main
             }
         }
 
