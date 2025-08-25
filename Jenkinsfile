@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull code from GitHub
-                git branch: 'main', url: 'https://github.com/<your-username>/<your-repo>.git'
+                git branch: 'main', url: 'https://github.com/Mahadhav1999/java-hello-world'
             }
         }
 
